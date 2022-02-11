@@ -9,6 +9,10 @@ public class Ficha2 {
 		//numVogais("A Anita foi comer");
 		//numVogais("Eu estou cansado");
 		
+		//teste correção do Ex4
+		//int a=factor(0);
+		//System.out.println(a);
+		
 		Scanner myNumber = new Scanner(System.in);
 		System.out.println("Insira o número de segundos");
 		convertSeconds(myNumber.nextInt());
@@ -38,7 +42,7 @@ public class Ficha2 {
 	//Ex4: função factor ciclo
 	public static int factor(int n){
 		int Aux=1;
-		while (n>=0){
+		while (n>0){		//Correção: não pode ser =0 senão multiplica por 0 (0!=1)
 			Aux=Aux*n;
 			n-=1;
 		}
@@ -53,14 +57,14 @@ public class Ficha2 {
 			return n*factorRecursivo(n-1);
 		}
 	}
-	//Ex6: Numero de vogais numa frase
+	//Ex6: Numero de vogais numa frase	->em vez de ifs, pode-se criar um array com as vogais e comparar só com os membros do array
 		public static int numTotalVogais(String frase){
 			int Aux=0;
 			char letra;
 			String palavra=frase.toLowerCase();
 			for (int i = 0; i < palavra.length(); i++) {
 				letra=palavra.charAt(i);
-				  if(letra=='a'||letra=='e'||letra=='i'||letra=='o'||letra=='u'){
+				  if(letra=='a'||letra=='e'||letra=='i'||letra=='o'||letra=='u'){	//pode ser substituido por comparação com um array
 					  Aux+=1;
 				  }
 				}
